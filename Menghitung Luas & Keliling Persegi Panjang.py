@@ -1,8 +1,8 @@
 print("Menghitung Luas dan Keliling Persegi Panjang")
 
 # variabel
-panjang = 20
-lebar = 4
+panjang = 35
+lebar = 6
 
 # Rumus
 luas = panjang * lebar
