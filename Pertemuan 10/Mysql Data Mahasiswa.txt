@@ -1,0 +1,289 @@
+Microsoft Windows [Version 10.0.19044.1766]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>cd\
+
+C:\>d:
+
+D:\>Aplikasi Sistem
+'Aplikasi' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\>cd Aplikasi Sistem
+
+D:\Aplikasi Sistem>cd xampp
+
+D:\Aplikasi Sistem\xampp>mysql
+'mysql' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Aplikasi Sistem\xampp>cd mysql
+
+D:\Aplikasi Sistem\xampp\mysql>cd bin
+
+D:\Aplikasi Sistem\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 74
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database mahasiswa;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> use mahasiswa;
+Database changed
+MariaDB [mahasiswa]> create table matakuliah(
+    ->
+    -> lo
+    -> )
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4
+MariaDB [mahasiswa]> Bye
+Ctrl-C -- exit!
+
+D:\Aplikasi Sistem\xampp\mysql\bin>create database kampus;
+'create' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Aplikasi Sistem\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 75
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database kampus;
+ERROR 1007 (HY000): Can't create database 'kampus'; database exists
+MariaDB [(none)]> use kampus
+Database changed
+MariaDB [kampus]> create table kampus(
+    -> id int primary key auto_increment,
+    -> nim varchar(10) unique not null,
+    -> nama varchar(50) not null,
+    -> jk char(1) not null,
+    -> prodi varchar(15) not null);
+Query OK, 0 rows affected (0.215 sec)
+
+MariaDB [kampus]> show tables;
++------------------+
+| Tables_in_kampus |
++------------------+
+| kampus           |
+| matakuliah       |
++------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [kampus]> describe matakuliah;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| kodemk | varchar(10)  | NO   |     | NULL    |                |
+| namamk | varchar(100) | NO   |     | NULL    |                |
+| sks    | int(11)      | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+4 rows in set (0.007 sec)
+
+MariaDB [kampus]> describe kampus;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nim   | varchar(10) | NO   | UNI | NULL    |                |
+| nama  | varchar(50) | NO   |     | NULL    |                |
+| jk    | char(1)     | NO   |     | NULL    |                |
+| prodi | varchar(15) | NO   |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+5 rows in set (0.009 sec)
+
+MariaDB [kampus]> create table mahasiswa(
+    -> id int primary key auto_increment,
+    -> nim varchar(10) unique not null,
+    -> nama varchar(50) not null,
+    -> jk char(1) not null,
+    -> prodi varchar(15) not null);
+Query OK, 0 rows affected (0.857 sec)
+
+MariaDB [kampus]> show tables;
++------------------+
+| Tables_in_kampus |
++------------------+
+| kampus           |
+| mahasiswa        |
+| matakuliah       |
++------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [kampus]> describe mahasiswa;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nim   | varchar(10) | NO   | UNI | NULL    |                |
+| nama  | varchar(50) | NO   |     | NULL    |                |
+| jk    | char(1)     | NO   |     | NULL    |                |
+| prodi | varchar(15) | NO   |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+5 rows in set (0.009 sec)
+
+MariaDB [kampus]> insert into mahasiswa(id,nim,nama,jk,prodi)values('1','220511170',L,Teknik Informatika);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Informatika)' at line 1
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511170',L,Teknik Informatika);
+ERROR 1064 (42000)insert into mahasiswa(nim,nama,jk,prodi)values('220511170','L','Te');k Informatika'); aDB server version for the right syntax to use near 'InformatikaERROR 1136 (21S01): Column count doesn't match value count at row 1
+    '>  [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511170','L','Teknik Informatika');
+    '> 136 (21S01): Column count doesn't match value count at row 1
+    '>  [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511170','L','                  ');
+    '> ;
+    '> ;;;
+    '> )()
+    '> insert into mahasiswa(nim,nama,jk,prodi)values('220511170','L','TIF');
+    '> ByeCtrl-C -- exit!
+
+
+D:\Aplikasi Sistem\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 78
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use mahasiswa;
+Database changed
+MariaDB [mahasiswa]> insert into mahasiswa(nim,nama,jk,prodi)values('220511170','L','TIF');
+ERROR 1146 (42S02): Table 'mahasiswa.mahasiswa' doesn't exist
+MariaDB [mahasiswa]> insert into mahasiswa(nim,nama,jk,prodi)values('220511170','nama','L','TIF');
+ERROR 1146 (42S02): Table 'mahasiswa.mahasiswa' doesn't exist
+MariaDB [mahasiswa]> describe mahasiswa;
+ERROR 1146 (42S02): Table 'mahasiswa.mahasiswa' doesn't exist
+MariaDB [mahasiswa]> use kampus;
+Database changed
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511170','nama','L','TIF');
+Query OK, 1 row affected (0.027 sec)
+
+MariaDB [kampus]> describe mahasiswa;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nim   | varchar(10) | NO   | UNI | NULL    |                |
+| nama  | varchar(50) | NO   |     | NULL    |                |
+| jk    | char(1)     | NO   |     | NULL    |                |
+| prodi | varchar(15) | NO   |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+5 rows in set (0.008 sec)
+
+MariaDB [kampus]> select * from mahasiswa
+    -> ;
++----+-----------+------+----+-------+
+| id | nim       | nama | jk | prodi |
++----+-----------+------+----+-------+
+|  1 | 220511170 | nama | L  | TIF   |
++----+-----------+------+----+-------+
+1 row in set (0.000 sec)
+
+MariaDB [kampus]> select * from mahasiswa;
++----+-----------+------+----+-------+
+| id | nim       | nama | jk | prodi |
++----+-----------+------+----+-------+
+|  1 | 220511170 | nama | L  | TIF   |
++----+-----------+------+----+-------+
+1 row in set (0.000 sec)
+
+MariaDB [kampus]> delete from mahasiswa where id='1';
+Query OK, 1 row affected (0.098 sec)
+
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511170','Nova Subhan','L','TIF');
+Query OK, 1 row affected (0.024 sec)
+
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220512839','Alex','L','IND');
+Query OK, 1 row affected (0.111 sec)
+
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511730','Cindy Yulia','P','PET');
+Query OK, 1 row affected (0.102 sec)
+
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511039','Nadzwa Nurul','P','TIF');
+Query OK, 1 row affected (0.105 sec)
+
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511736','Arif Rahman','L','IND');
+Query OK, 1 row affected (0.103 sec)
+
+MariaDB [kampus]> insert into mahasiswa(nim,nama,jk,prodi)values('220511543','Azizi Shafa','P','PET');
+Query OK, 1 row affected (0.112 sec)
+
+MariaDB [kampus]> select * from mahasiswa;
++----+-----------+--------------+----+-------+
+| id | nim       | nama         | jk | prodi |
++----+-----------+--------------+----+-------+
+|  2 | 220511170 | Nova Subhan  | L  | TIF   |
+|  3 | 220512839 | Alex         | L  | IND   |
+|  4 | 220511730 | Cindy Yulia  | P  | PET   |
+|  5 | 220511039 | Nadzwa Nurul | P  | TIF   |
+|  6 | 220511736 | Arif Rahman  | L  | IND   |
+|  7 | 220511543 | Azizi Shafa  | P  | PET   |
++----+-----------+--------------+----+-------+
+6 rows in set (0.001 sec)
+
+MariaDB [kampus]> update mahasiswa set id='1' where nama='Nova Subhan';
+Query OK, 1 row affected (0.030 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [kampus]> select * from mahasiswa;
++----+-----------+--------------+----+-------+
+| id | nim       | nama         | jk | prodi |
++----+-----------+--------------+----+-------+
+|  1 | 220511170 | Nova Subhan  | L  | TIF   |
+|  3 | 220512839 | Alex         | L  | IND   |
+|  4 | 220511730 | Cindy Yulia  | P  | PET   |
+|  5 | 220511039 | Nadzwa Nurul | P  | TIF   |
+|  6 | 220511736 | Arif Rahman  | L  | IND   |
+|  7 | 220511543 | Azizi Shafa  | P  | PET   |
++----+-----------+--------------+----+-------+
+6 rows in set (0.001 sec)
+
+MariaDB [kampus]> update mahasiswa set id='2' where nama='Alex';
+Query OK, 1 row affected (0.108 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [kampus]> update mahasiswa set id='3' where nama='Cindy Yulia';
+Query OK, 1 row affected (0.189 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [kampus]> update mahasiswa set id='4' where nama='Nadzwa Nurul';
+Query OK, 1 row affected (0.106 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [kampus]> update mahasiswa set id='5' where nama='Arif Rahman';
+Query OK, 1 row affected (0.097 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [kampus]> update mahasiswa set id='6' where nama='Azizi Shafa';
+Query OK, 1 row affected (0.028 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [kampus]> select * from mahasiswa;
++----+-----------+--------------+----+-------+
+| id | nim       | nama         | jk | prodi |
++----+-----------+--------------+----+-------+
+|  1 | 220511170 | Nova Subhan  | L  | TIF   |
+|  2 | 220512839 | Alex         | L  | IND   |
+|  3 | 220511730 | Cindy Yulia  | P  | PET   |
+|  4 | 220511039 | Nadzwa Nurul | P  | TIF   |
+|  5 | 220511736 | Arif Rahman  | L  | IND   |
+|  6 | 220511543 | Azizi Shafa  | P  | PET   |
++----+-----------+--------------+----+-------+
+6 rows in set (0.001 sec)
+
+MariaDB [kampus]> Ctrl-C -- exit!
+Bye
+
+D:\Aplikasi Sistem\xampp\mysql\bin>
