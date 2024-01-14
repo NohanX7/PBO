@@ -3,11 +3,11 @@ import mysql.connector as mc
 class DBConnection:
 
     def __init__(self):
-        self.host = "mysql-nohanx7-novasubhan-tif22d.a.aivencloud.com"
+        self.host = "Not Found"
         self.port = 25608
         self.name = "defaultdb"
         self.user = "avnadmin"
-        self.password = "AVNS_hMg0wDQzuyt-BymtkaM"
+        self.password = "Not Found"
         self.ssl='ca.pem'
         self.pure=True
         self.conn = None
